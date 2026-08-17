@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flooring Pack Calculator UK | Compare Pack Sizes & Cost</title>
+<meta name="description" content="Free UK flooring pack calculator. Add one or more rooms, apply a waste allowance, compare real flooring pack sizes and prices, and find the cheapest combination that covers your project.">
+<link rel="canonical" href="https://jajmurphy.github.io/diy-buying-planner/flooring-pack-calculator.html">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Flooring Pack Calculator UK">
+<meta property="og:description" content="Calculate flooring area across multiple rooms, add waste, then compare pack sizes and prices to find the cheapest valid basket.">
+<meta property="og:url" content="https://jajmurphy.github.io/diy-buying-planner/flooring-pack-calculator.html">
+<style>
+:root{--bg:#f6f7f8;--card:#fff;--text:#17202a;--muted:#5d6975;--line:#dce1e5;--accent:#0c6b58;--accent2:#e9f5f1;--bad:#9b2c2c;--shadow:0 10px 28px rgba(0,0,0,.06);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);line-height:1.5}.wrap{max-width:1020px;margin:auto;padding:20px}.nav{display:flex;gap:12px;flex-wrap:wrap}.nav a{color:var(--accent);font-weight:700;text-decoration:none}.hero{padding:30px 0 18px}.kicker{font-size:.82rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.08em}.hero h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.05;margin:.35rem 0 .7rem}.hero p{max-width:780px;color:var(--muted);font-size:1.06rem}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:var(--shadow)}h2{margin:.1rem 0 1rem;font-size:1.25rem}.field{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}label{font-weight:650;font-size:.92rem}.hint,.muted{color:var(--muted)}.small{font-size:.84rem}input,button{font:inherit}input{width:100%;padding:10px 11px;border:1px solid #bcc6ce;border-radius:10px;background:#fff;color:var(--text)}input:focus{outline:3px solid rgba(12,107,88,.15);border-color:var(--accent)}button{border:0;border-radius:11px;padding:11px 14px;font-weight:700;cursor:pointer}.primary{background:var(--accent);color:#fff}.secondary{background:#eef1f3;color:var(--text)}.danger{background:#fbe9e9;color:var(--bad)}.room-row,.pack-row{display:grid;gap:8px;align-items:end;margin-bottom:8px}.room-row{grid-template-columns:1.15fr .75fr .75fr auto}.pack-row{grid-template-columns:1.2fr .8fr .8fr auto}.metric{padding:14px;border:1px solid var(--line);border-radius:12px;margin-bottom:10px}.metric .label{font-size:.82rem;color:var(--muted)}.metric .value{font-size:1.4rem;font-weight:800}.result-list{margin:8px 0 0;padding-left:20px}.error{color:var(--bad);font-weight:650}.callout{background:var(--accent2);border:1px solid #cbe6dc;border-radius:12px;padding:12px 14px;font-size:.9rem}.footer{padding:28px 0 45px;color:var(--muted);font-size:.83rem}@media(max-width:760px){.grid{grid-template-columns:1fr}.room-row,.pack-row{grid-template-columns:1fr 1fr}.room-row .row-name,.pack-row .row-name{grid-column:1/-1}.room-row button,.pack-row button{width:100%}.wrap{padding:14px}.card{padding:16px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<nav class="nav" aria-label="Tools"><a href="./">Patio materials calculator</a><a href="pack-optimiser.html">Pack optimiser</a><a href="flooring-pack-calculator.html" aria-current="page">Flooring pack calculator</a></nav>
+<section class="hero">
+<div class="kicker">DIY Buying Planner · Free UK tool</div>
+<h1>Flooring Pack Calculator</h1>
+<p>Add one or more rooms, choose your waste allowance, then enter the flooring packs you are considering. The calculator works out your total project requirement and finds the <strong>cheapest whole-pack combination</strong> that covers it.</p>
+</section>
+<div class="grid">
+<section class="card">
+<h2>1. Rooms</h2>
+<p class="small muted">Add separate rectangular areas. For an L-shaped room, split it into two rectangles.</p>
+<div id="roomRows"></div>
+<button class="secondary" id="addRoom" type="button">+ Add room / area</button>
+<div class="field" style="margin-top:16px"><label for="waste">Waste allowance (%)</label><input id="waste" type="number" min="0" max="50" step="0.5" value="10"><span class="hint small">Use the flooring manufacturer's guidance. Complex layouts may need more allowance than simple straight-lay rooms.</span></div>
+
+<h2 style="margin-top:1.4rem">2. Flooring packs</h2>
+<p class="small muted">Use the coverage and price shown for the actual flooring products you are comparing.</p>
+<div id="packRows"></div>
+<button class="secondary" id="addPack" type="button">+ Add pack option</button>
+<button class="primary" id="calculate" type="button" style="width:100%;margin-top:16px">Calculate cheapest basket</button>
+<div id="error" class="error" role="alert" style="margin-top:10px"></div>
+</section>
+
+<section class="card" aria-live="polite">
+<h2>Buying result</h2>
+<div id="empty" class="muted">Enter your rooms and pack options, then calculate.</div>
+<div id="results" hidden>
+<div class="metric"><div class="label">Measured floor area</div><div class="value" id="areaOut"></div></div>
+<div class="metric"><div class="label">Required coverage including waste</div><div class="value" id="targetOut"></div><div class="small muted" id="wasteOut"></div></div>
+<div class="metric"><div class="label">Cheapest valid basket</div><div class="value" id="costOut"></div><ul class="result-list" id="basketOut"></ul></div>
+<div class="metric"><div class="label">Coverage purchased</div><div class="value" id="coverageOut"></div><div class="small muted" id="surplusOut"></div></div>
+<div class="callout"><strong>Before buying:</strong> check the exact pack coverage, batch/dye-lot requirements, installation pattern and waste recommendation for your chosen flooring. This calculator optimises pack quantities; it does not determine whether a product is suitable for the room.</div>
+</div>
+</section>
+</div>
+<section class="card" style="margin-top:18px">
+<h2>How the calculation works</h2>
+<p><strong>Measured area</strong> is the sum of each room length × width. <strong>Required coverage</strong> is measured area × (1 + waste allowance). The optimiser then searches whole-number combinations of the pack options you entered and selects the lowest-cost basket that reaches or exceeds the required coverage.</p>
+<p class="small muted">If two baskets cost the same, the calculator prefers the one with less surplus, then fewer total packs. Blank or invalid pack rows are ignored.</p>
+</section>
+<section class="card" style="margin-top:18px">
+<h2>Why compare pack options?</h2>
+<p>A single flooring product may be sold in one fixed pack size, but when comparing several products or pack formats, the cheapest price per square metre does not always create the cheapest final basket. Whole-pack rounding can change the outcome. This tool compares the actual packs you can buy rather than rounding each option separately.</p>
+</section>
+<div class="footer">Free calculator · No account · Calculations run in your browser · Prices are entered by you.</div>
+</main>
+<script>
+const $=id=>document.getElementById(id);
+let rooms=[{name:'Room 1',length:4,width:3},{name:'Room 2',length:3,width:2}];
+let packs=[{name:'Flooring A',coverage:2.2,price:42},{name:'Flooring B',coverage:2.8,price:55}];
+const esc=s=>String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
+function renderRooms(){const box=$('roomRows');box.innerHTML='';rooms.forEach((r,i)=>{const row=document.createElement('div');row.className='room-row';row.innerHTML=`<div class="field row-name"><label>Area name</label><input data-ri="${i}" data-rk="name" value="${esc(r.name)}"></div><div class="field"><label>Length (m)</label><input type="number" min="0" step="0.01" data-ri="${i}" data-rk="length" value="${r.length}"></div><div class="field"><label>Width (m)</label><input type="number" min="0" step="0.01" data-ri="${i}" data-rk="width" value="${r.width}"></div><button class="danger" type="button" data-rremove="${i}">Remove</button>`;box.appendChild(row)});box.querySelectorAll('input').forEach(el=>el.addEventListener('input',e=>{const i=+e.target.dataset.ri,k=e.target.dataset.rk;rooms[i][k]=k==='name'?e.target.value:Number(e.target.value)}));box.querySelectorAll('[data-rremove]').forEach(b=>b.addEventListener('click',()=>{rooms.splice(+b.dataset.rremove,1);renderRooms()}))}
+function renderPacks(){const box=$('packRows');box.innerHTML='';packs.forEach((p,i)=>{const row=document.createElement('div');row.className='pack-row';row.innerHTML=`<div class="field row-name"><label>Pack name</label><input data-pi="${i}" data-pk="name" value="${esc(p.name)}"></div><div class="field"><label>Coverage (m²)</label><input type="number" min="0" step="0.01" data-pi="${i}" data-pk="coverage" value="${p.coverage}"></div><div class="field"><label>Price (£)</label><input type="number" min="0" step="0.01" data-pi="${i}" data-pk="price" value="${p.price}"></div><button class="danger" type="button" data-premove="${i}">Remove</button>`;box.appendChild(row)});box.querySelectorAll('input').forEach(el=>el.addEventListener('input',e=>{const i=+e.target.dataset.pi,k=e.target.dataset.pk;packs[i][k]=k==='name'?e.target.value:(e.target.value===''?NaN:Number(e.target.value))}));box.querySelectorAll('[data-premove]').forEach(b=>b.addEventListener('click',()=>{packs.splice(+b.dataset.premove,1);renderPacks()}))}
+$('addRoom').addEventListener('click',()=>{if(rooms.length>=8){$('error').textContent='The calculator supports up to 8 rectangular areas.';return}rooms.push({name:`Room ${rooms.length+1}`,length:0,width:0});renderRooms()});
+$('addPack').addEventListener('click',()=>{if(packs.length>=6){$('error').textContent='The calculator compares up to 6 pack options.';return}packs.push({name:`Flooring ${String.fromCharCode(65+packs.length)}`,coverage:NaN,price:NaN});renderPacks()});
+function optimise(target,items){const valid=items.filter(x=>Number.isFinite(x.coverage)&&x.coverage>0&&Number.isFinite(x.price)&&x.price>=0);if(!valid.length)return null;const minCov=Math.min(...valid.map(x=>x.coverage));const maxPacks=Math.min(220,Math.ceil(target/minCov)+4);let best=null;function walk(i,counts,coverage,cost,total){if(i===valid.length){if(coverage+1e-9<target)return;const candidate={counts:[...counts],coverage,cost,total,items:valid};if(!best||candidate.cost<best.cost-1e-8||(Math.abs(candidate.cost-best.cost)<1e-8&&(candidate.coverage<best.coverage-1e-8||(Math.abs(candidate.coverage-best.coverage)<1e-8&&candidate.total<best.total))))best=candidate;return}if(best&&cost>best.cost+1e-8)return;const item=valid[i];const remaining=Math.max(0,target-coverage);let upper=Math.min(maxPacks-total,Math.ceil(remaining/item.coverage)+3);if(i===valid.length-1)upper=Math.min(maxPacks-total,Math.ceil(remaining/item.coverage)+1);for(let n=0;n<=upper;n++){counts[i]=n;walk(i+1,counts,coverage+n*item.coverage,cost+n*item.price,total+n)}counts[i]=0}walk(0,new Array(valid.length).fill(0),0,0,0);return best}
+function money(v){return new Intl.NumberFormat('en-GB',{style:'currency',currency:'GBP'}).format(v)}
+function dec(v,d=2){return Number(v).toLocaleString('en-GB',{maximumFractionDigits:d})}
+$('calculate').addEventListener('click',()=>{const error=$('error');error.textContent='';const validRooms=rooms.filter(r=>Number.isFinite(r.length)&&r.length>0&&Number.isFinite(r.width)&&r.width>0);if(!validRooms.length){error.textContent='Add at least one room with a positive length and width.';return}const waste=Number($('waste').value);if(!Number.isFinite(waste)||waste<0||waste>50){error.textContent='Enter a waste allowance between 0% and 50%.';return}const area=validRooms.reduce((s,r)=>s+r.length*r.width,0);const target=area*(1+waste/100);const best=optimise(target,packs);if(!best){error.textContent='Add at least one valid pack with positive coverage and a price.';return}$('areaOut').textContent=`${dec(area)} m²`;$('targetOut').textContent=`${dec(target)} m²`;$('wasteOut').textContent=`Includes ${dec(target-area)} m² (${dec(waste,1)}%) waste allowance.`;$('costOut').textContent=money(best.cost);$('coverageOut').textContent=`${dec(best.coverage)} m²`;$('surplusOut').textContent=`Surplus above required coverage: ${dec(best.coverage-target)} m².`;const basket=$('basketOut');basket.innerHTML='';best.counts.forEach((n,i)=>{if(n>0){const li=document.createElement('li');li.textContent=`${best.items[i].name}: ${n} pack${n===1?'':'s'} (${dec(best.items[i].coverage*n)} m², ${money(best.items[i].price*n)})`;basket.appendChild(li)}});$('empty').hidden=true;$('results').hidden=false});
+renderRooms();renderPacks();
+</script>
+</body>
+</html>

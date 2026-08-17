@@ -50,3 +50,11 @@
 - New page: `pack-optimiser.html`.
 - Existing patio page updated with internal navigation to Pack Optimiser.
 - Sitemap expanded to include both pages.
+## Growth cycle 2 — 17 August 2026
+- Verified Pack Optimiser exists on `main` and is listed in the sitemap.
+- Researched the third search entry-point. Generic tile and paving calculator SERPs remain crowded; flooring calculators commonly calculate packs for a single pack size.
+- Built `flooring-pack-calculator.html` to combine multiple rooms, waste allowance, multiple actual pack options and cheapest-valid-basket optimisation.
+- Updated internal navigation on the patio calculator and general Pack Optimiser.
+- Expanded sitemap to three URLs.
+- Budget remains £0.
+
