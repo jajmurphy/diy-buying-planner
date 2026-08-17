@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pack Optimiser UK | Cheapest Pack Combination Calculator</title>
+<meta name="description" content="Free pack optimiser for flooring, tiles, paving and other materials. Enter the quantity you need plus pack sizes and prices to find the cheapest combination that covers it.">
+<link rel="canonical" href="https://jajmurphy.github.io/diy-buying-planner/pack-optimiser.html">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pack Optimiser | Cheapest Pack Combination Calculator">
+<meta property="og:description" content="Compare pack sizes and prices to find the cheapest combination that meets your required quantity, with surplus and total cost shown clearly.">
+<meta property="og:url" content="https://jajmurphy.github.io/diy-buying-planner/pack-optimiser.html">
+<style>
+:root{--bg:#f6f7f8;--card:#fff;--text:#17202a;--muted:#5d6975;--line:#dce1e5;--accent:#0c6b58;--accent2:#e9f5f1;--bad:#9b2c2c;--shadow:0 10px 28px rgba(0,0,0,.06);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);line-height:1.5}.wrap{max-width:980px;margin:auto;padding:20px}.hero{padding:30px 0 18px}.kicker{font-size:.82rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.08em}.hero h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.05;margin:.35rem 0 .7rem}.hero p{max-width:760px;color:var(--muted);font-size:1.06rem}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:var(--shadow)}h2{margin:.1rem 0 1rem;font-size:1.25rem}.field{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}label{font-weight:650;font-size:.92rem}.hint,.muted{color:var(--muted)}.small{font-size:.84rem}input,button{font:inherit}input{width:100%;padding:10px 11px;border:1px solid #bcc6ce;border-radius:10px;background:#fff;color:var(--text)}input:focus{outline:3px solid rgba(12,107,88,.15);border-color:var(--accent)}button{border:0;border-radius:11px;padding:11px 14px;font-weight:700;cursor:pointer}.primary{background:var(--accent);color:#fff}.secondary{background:#eef1f3;color:var(--text)}.danger{background:#fbe9e9;color:var(--bad)}.pack-row{display:grid;grid-template-columns:1.2fr .8fr .8fr auto;gap:8px;align-items:end;margin-bottom:8px}.metric{padding:14px;border:1px solid var(--line);border-radius:12px;margin-bottom:10px}.metric .label{font-size:.82rem;color:var(--muted)}.metric .value{font-size:1.4rem;font-weight:800}.result-list{margin:8px 0 0;padding-left:20px}.error{color:var(--bad);font-weight:650}.nav{display:flex;gap:12px;flex-wrap:wrap;margin:0 0 8px}.nav a{color:var(--accent);font-weight:700;text-decoration:none}.footer{padding:28px 0 45px;color:var(--muted);font-size:.83rem}@media(max-width:760px){.grid{grid-template-columns:1fr}.pack-row{grid-template-columns:1fr 1fr}.pack-row .pack-name{grid-column:1/-1}.pack-row button{width:100%}.wrap{padding:14px}.card{padding:16px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<nav class="nav" aria-label="Tools"><a href="./">Patio materials calculator</a><a href="pack-optimiser.html" aria-current="page">Pack optimiser</a></nav>
+<section class="hero">
+<div class="kicker">DIY Buying Planner · Free UK tool</div>
+<h1>Pack Optimiser</h1>
+<p>Need a certain amount of flooring, tiles, paving, insulation or another packaged material? Enter your required quantity and the packs you can buy. The optimiser finds the <strong>cheapest combination that meets or exceeds your target</strong>, then shows how much surplus you will have.</p>
+</section>
+<div class="grid">
+<section class="card">
+<h2>Enter your requirement</h2>
+<div class="field"><label for="target">Quantity required</label><input id="target" type="number" min="0.01" step="0.01" value="43"><span class="hint small">Use the same unit as your pack coverage: e.g. m², litres, kg or metres.</span></div>
+<div class="field"><label for="unit">Unit label</label><input id="unit" type="text" value="m²" maxlength="12"><span class="hint small">Display only; it does not affect the calculation.</span></div>
+<h2 style="margin-top:1.4rem">Available packs</h2>
+<p class="small muted">Enter up to six pack sizes and prices. Blank or invalid rows are ignored.</p>
+<div id="packRows"></div>
+<button class="secondary" id="addPack" type="button">+ Add pack</button>
+<button class="primary" id="calculate" type="button" style="width:100%;margin-top:16px">Find cheapest combination</button>
+<div id="error" class="error" role="alert" style="margin-top:10px"></div>
+</section>
+<section class="card" aria-live="polite">
+<h2>Best buying option</h2>
+<div id="empty" class="muted">Enter your target and pack options, then calculate.</div>
+<div id="results" hidden>
+<div class="metric"><div class="label">Required</div><div class="value" id="requiredOut"></div></div>
+<div class="metric"><div class="label">Total purchased</div><div class="value" id="coverageOut"></div><div class="small muted" id="surplusOut"></div></div>
+<div class="metric"><div class="label">Lowest cost found</div><div class="value" id="costOut"></div><div class="small muted" id="countOut"></div></div>
+<div class="metric"><div class="label">Buy</div><ul class="result-list" id="buyList"></ul></div>
+</div>
+</section>
+</div>
+<section class="card" style="margin-top:18px">
+<h2>How it works</h2>
+<p>The calculator searches whole-number combinations of the packs you enter. A valid basket must cover at least your required quantity. It chooses the lowest total cost; if two baskets cost the same, it prefers the one with less surplus, then the one using fewer packs.</p>
+<p class="small muted">This is purchase optimisation, not a construction recommendation. Add any waste allowance to your required quantity before using the optimiser if your project needs one.</p>
+</section>
+<section class="card" style="margin-top:18px">
+<h2>Example</h2>
+<p>If you need <strong>43 m²</strong> and a pack covers <strong>2.4 m²</strong>, a single-pack calculation gives <strong>18 packs</strong>, covering 43.2 m². With several pack sizes and prices, the optimiser checks whether a mixed combination is cheaper.</p>
+</section>
+<div class="footer">Free client-side calculator · No account · No backend · No paid API</div>
+</main>
+<script>
+const $=id=>document.getElementById(id);
+let packs=[{name:'Pack A',coverage:2.4,price:42},{name:'Pack B',coverage:3.6,price:59},{name:'Pack C',coverage:5,price:86}];
+function esc(s){return String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));}
+function render(){const box=$('packRows');box.innerHTML='';packs.forEach((p,i)=>{const row=document.createElement('div');row.className='pack-row';row.innerHTML=`<div class="field pack-name"><label>Pack name</label><input data-k="name" data-i="${i}" value="${esc(p.name)}"></div><div class="field"><label>Coverage</label><input type="number" min="0" step="0.01" data-k="coverage" data-i="${i}" value="${Number.isFinite(p.coverage)?p.coverage:''}"></div><div class="field"><label>Price (£)</label><input type="number" min="0" step="0.01" data-k="price" data-i="${i}" value="${Number.isFinite(p.price)?p.price:''}"></div><button class="danger" type="button" data-remove="${i}">Remove</button>`;box.appendChild(row)});box.querySelectorAll('input').forEach(inp=>inp.addEventListener('input',e=>{const i=+e.target.dataset.i,k=e.target.dataset.k;packs[i][k]=k==='name'?e.target.value:(e.target.value===''?NaN:Number(e.target.value));}));box.querySelectorAll('[data-remove]').forEach(btn=>btn.addEventListener('click',()=>{packs.splice(+btn.dataset.remove,1);render();}));}
+$('addPack').addEventListener('click',()=>{if(packs.length>=6){$('error').textContent='You can compare up to six pack options at once.';return;}packs.push({name:`Pack ${String.fromCharCode(65+packs.length)}`,coverage:NaN,price:NaN});render();});
+function optimise(target,items){const valid=items.filter(x=>Number.isFinite(x.coverage)&&x.coverage>0&&Number.isFinite(x.price)&&x.price>=0);if(!valid.length||target<=0)return null;const minCov=Math.min(...valid.map(x=>x.coverage));const maxPacks=Math.ceil(target/minCov)+4;let best=null;const counts=new Array(valid.length).fill(0);function rec(i,totalCov,totalCost,totalCount){if(totalCount>maxPacks)return;if(totalCov>=target){const cand={counts:[...counts],coverage:totalCov,cost:totalCost,count:totalCount,items:valid};if(!best||cand.cost<best.cost-1e-9||(Math.abs(cand.cost-best.cost)<1e-9&&(cand.coverage<best.coverage-1e-9||(Math.abs(cand.coverage-best.coverage)<1e-9&&cand.count<best.count))))best=cand;return;}if(i===valid.length)return;const remaining=maxPacks-totalCount;for(let n=0;n<=remaining;n++){counts[i]=n;rec(i+1,totalCov+n*valid[i].coverage,totalCost+n*valid[i].price,totalCount+n);}counts[i]=0;}rec(0,0,0,0);return best;}
+function money(v){return new Intl.NumberFormat('en-GB',{style:'currency',currency:'GBP'}).format(v)}
+function dec(v){return Number(v).toLocaleString('en-GB',{maximumFractionDigits:3})}
+$('calculate').addEventListener('click',()=>{const target=Number($('target').value),unit=$('unit').value.trim()||'units';$('error').textContent='';if(!Number.isFinite(target)||target<=0){$('error').textContent='Enter a required quantity greater than zero.';return;}const best=optimise(target,packs);if(!best){$('error').textContent='Add at least one valid pack with positive coverage and a price.';return;}$('requiredOut').textContent=`${dec(target)} ${unit}`;$('coverageOut').textContent=`${dec(best.coverage)} ${unit}`;$('surplusOut').textContent=`Surplus: ${dec(best.coverage-target)} ${unit}`;$('costOut').textContent=money(best.cost);$('countOut').textContent=`${best.count} pack${best.count===1?'':'s'} in total`;const list=$('buyList');list.innerHTML='';best.counts.forEach((n,i)=>{if(!n)return;const li=document.createElement('li');li.textContent=`${n} × ${best.items[i].name} (${dec(best.items[i].coverage)} ${unit} each at ${money(best.items[i].price)})`;list.appendChild(li)});$('empty').hidden=true;$('results').hidden=false;});
+render();
+</script>
+</body>
+</html>

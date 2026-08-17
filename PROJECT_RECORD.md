@@ -38,3 +38,15 @@
 - No domain/analytics/Search Console yet; these require external setup after deployment.
 - No retailer scraping or live prices.
 - No affiliate links until programmes are verified and demand is demonstrated.
+
+## 17 Aug 2026 — Growth cycle 1
+- Live GitHub Pages MVP confirmed.
+- Google Search Console ownership verified.
+- Homepage submitted for indexing.
+- Sitemap publicly accessible; Search Console fetch status pending.
+- Competitor/search review: MOT Type 1 and conventional flooring calculators are crowded with multiple active/new entrants.
+- Decision: second indexable tool will be a standalone Pack Optimiser, reusing the existing cheapest-valid-basket engine.
+- Purpose: create a broader purchase-optimisation entry point without adding construction assumptions or density guesses.
+- New page: `pack-optimiser.html`.
+- Existing patio page updated with internal navigation to Pack Optimiser.
+- Sitemap expanded to include both pages.
