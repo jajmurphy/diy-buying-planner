@@ -38,23 +38,8 @@
 - No domain/analytics/Search Console yet; these require external setup after deployment.
 - No retailer scraping or live prices.
 - No affiliate links until programmes are verified and demand is demonstrated.
-
-## 17 Aug 2026 — Growth cycle 1
-- Live GitHub Pages MVP confirmed.
-- Google Search Console ownership verified.
-- Homepage submitted for indexing.
-- Sitemap publicly accessible; Search Console fetch status pending.
-- Competitor/search review: MOT Type 1 and conventional flooring calculators are crowded with multiple active/new entrants.
-- Decision: second indexable tool will be a standalone Pack Optimiser, reusing the existing cheapest-valid-basket engine.
-- Purpose: create a broader purchase-optimisation entry point without adding construction assumptions or density guesses.
-- New page: `pack-optimiser.html`.
-- Existing patio page updated with internal navigation to Pack Optimiser.
-- Sitemap expanded to include both pages.
-## Growth cycle 2 — 17 August 2026
-- Verified Pack Optimiser exists on `main` and is listed in the sitemap.
-- Researched the third search entry-point. Generic tile and paving calculator SERPs remain crowded; flooring calculators commonly calculate packs for a single pack size.
-- Built `flooring-pack-calculator.html` to combine multiple rooms, waste allowance, multiple actual pack options and cheapest-valid-basket optimisation.
-- Updated internal navigation on the patio calculator and general Pack Optimiser.
-- Expanded sitemap to three URLs.
-- Budget remains £0.
+## Analytics
+- Cloudflare Web Analytics beacon added to all three live calculator pages.
+- Site token configured: `38b26ef7e4254aff90ab66220a718fa1`.
+- Purpose: measure real visitor/page-view and performance data alongside Google Search Console.
 
