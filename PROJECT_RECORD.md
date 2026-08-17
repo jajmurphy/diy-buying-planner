@@ -43,3 +43,12 @@
 - Site token configured: `38b26ef7e4254aff90ab66220a718fa1`.
 - Purpose: measure real visitor/page-view and performance data alongside Google Search Console.
 
+
+
+## 2026-08-17 — AdSense readiness
+- Added About and Privacy pages.
+- Added consistent navigation across all calculators.
+- Expanded sitemap to include About and Privacy.
+- Privacy page records current Cloudflare Web Analytics use and states that display advertising is not yet active.
+- AdSense code and ads.txt deliberately not added yet because the exact Google publisher ID/code has not been supplied.
+- Next external action: create/connect AdSense site, configure Google CMP for UK/EEA/Switzerland, then supply the exact AdSense code/publisher ID for deployment.
