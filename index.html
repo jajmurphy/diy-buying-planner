@@ -3,8 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Patio Buying Planner</title>
-<meta name="description" content="Calculate patio paving, sub-base and mortar quantities, then convert them into real packs and a practical shopping list.">
+<title>Patio Materials Calculator & Shopping List | DIY Buying Planner</title>
+<meta name="description" content="Free UK patio materials calculator. Work out paving packs, sub-base and mortar quantities, compare pack costs and create a practical patio shopping list.">
+<link rel="canonical" href="https://jajmurphy.github.io/diy-buying-planner/">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Patio Materials Calculator & Shopping List">
+<meta property="og:description" content="Calculate patio materials, compare paving packs and turn your project measurements into a practical UK shopping list.">
+<meta property="og:url" content="https://jajmurphy.github.io/diy-buying-planner/">
 <style>
 :root{--bg:#f6f7f8;--card:#fff;--text:#17202a;--muted:#5d6975;--line:#dce1e5;--accent:#0c6b58;--accent2:#e9f5f1;--warn:#8a5a00;--warnbg:#fff7df;--bad:#9b2c2c;--good:#166534;--shadow:0 10px 28px rgba(0,0,0,.06);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
 *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);line-height:1.5}.wrap{max-width:1100px;margin:auto;padding:20px}.hero{padding:34px 0 20px}.kicker{font-size:.82rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.08em}.hero h1{font-size:clamp(2rem,5vw,3.6rem);line-height:1.03;margin:.35rem 0 .7rem}.hero p{max-width:760px;color:var(--muted);font-size:1.08rem}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:var(--shadow)}h2{margin:.1rem 0 1rem;font-size:1.25rem}h3{margin:1.2rem 0 .7rem;font-size:1rem}.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}label{font-weight:650;font-size:.92rem}.hint{font-size:.8rem;color:var(--muted)}input,select,button{font:inherit}input,select{width:100%;padding:10px 11px;border:1px solid #bcc6ce;border-radius:10px;background:#fff;color:var(--text)}input:focus,select:focus{outline:3px solid rgba(12,107,88,.15);border-color:var(--accent)}button{border:0;border-radius:11px;padding:11px 14px;font-weight:700;cursor:pointer}.primary{background:var(--accent);color:#fff}.secondary{background:#eef1f3;color:var(--text)}.danger{background:#fbe9e9;color:var(--bad)}.callout{background:var(--warnbg);border:1px solid #f0d58c;border-radius:12px;padding:12px 14px;color:#5e4308;font-size:.9rem}.results{display:grid;gap:12px}.metric{padding:14px;border:1px solid var(--line);border-radius:12px}.metric .label{font-size:.82rem;color:var(--muted)}.metric .value{font-size:1.35rem;font-weight:800;margin-top:2px}.metric .sub{font-size:.83rem;color:var(--muted)}.shopping{width:100%;border-collapse:collapse}.shopping th,.shopping td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}.shopping th{font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}.cost{text-align:right!important;white-space:nowrap}.pill{display:inline-block;padding:3px 8px;border-radius:999px;background:var(--accent2);color:var(--accent);font-size:.78rem;font-weight:700}.pack-row{display:grid;grid-template-columns:1.3fr .8fr .8fr auto;gap:8px;align-items:end;margin-bottom:8px}.pack-row button{height:42px}.muted{color:var(--muted)}.small{font-size:.83rem}.footer{padding:30px 0 50px;color:var(--muted);font-size:.83rem}.hidden{display:none}.error{color:var(--bad);font-weight:650}.success{color:var(--good);font-weight:700}@media(max-width:780px){.grid{grid-template-columns:1fr}.fields{grid-template-columns:1fr}.pack-row{grid-template-columns:1fr 1fr}.pack-row .pack-name{grid-column:1/-1}.pack-row button{width:100%}.wrap{padding:14px}.card{padding:16px}}
@@ -15,8 +21,8 @@
 <main class="wrap">
 <section class="hero">
 <div class="kicker">DIY buying planner · UK prototype</div>
-<h1>Patio Buying Planner</h1>
-<p>Turn patio dimensions into construction quantities, then into real packs, surplus and estimated basket cost. The calculator keeps mathematical outputs separate from adjustable construction assumptions.</p>
+<h1>Patio Materials Calculator & Buying Planner</h1>
+<p>Use this free UK patio materials calculator to turn your patio dimensions into paving, sub-base and mortar quantities, then convert them into real packs, surplus and estimated basket cost. The calculator keeps mathematical outputs separate from adjustable construction assumptions.</p>
 </section>
 <div class="grid">
 <section class="card input-panel" aria-labelledby="inputs-title">

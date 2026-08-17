@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jajmurphy.github.io/diy-buying-planner/sitemap.xml
