@@ -14,18 +14,13 @@
 <meta property="og:url" content="https://jajmurphy.github.io/diy-buying-planner/">
 <style>
 :root{--bg:#f6f7f8;--card:#fff;--text:#17202a;--muted:#5d6975;--line:#dce1e5;--accent:#0c6b58;--accent2:#e9f5f1;--warn:#8a5a00;--warnbg:#fff7df;--bad:#9b2c2c;--good:#166534;--shadow:0 10px 28px rgba(0,0,0,.06);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);line-height:1.5}.wrap{max-width:1100px;margin:auto;padding:20px}.hero{padding:34px 0 20px}.kicker{font-size:.82rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.08em}.hero h1{font-size:clamp(2rem,5vw,3.6rem);line-height:1.03;margin:.35rem 0 .7rem}.hero p{max-width:760px;color:var(--muted);font-size:1.08rem}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:var(--shadow)}h2{margin:.1rem 0 1rem;font-size:1.25rem}h3{margin:1.2rem 0 .7rem;font-size:1rem}.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}label{font-weight:650;font-size:.92rem}.hint{font-size:.8rem;color:var(--muted)}input,select,button{font:inherit}input,select{width:100%;padding:10px 11px;border:1px solid #bcc6ce;border-radius:10px;background:#fff;color:var(--text)}input:focus,select:focus{outline:3px solid rgba(12,107,88,.15);border-color:var(--accent)}button{border:0;border-radius:11px;padding:11px 14px;font-weight:700;cursor:pointer}.primary{background:var(--accent);color:#fff}.secondary{background:#eef1f3;color:var(--text)}.danger{background:#fbe9e9;color:var(--bad)}.callout{background:var(--warnbg);border:1px solid #f0d58c;border-radius:12px;padding:12px 14px;color:#5e4308;font-size:.9rem}.results{display:grid;gap:12px}.metric{padding:14px;border:1px solid var(--line);border-radius:12px}.metric .label{font-size:.82rem;color:var(--muted)}.metric .value{font-size:1.35rem;font-weight:800;margin-top:2px}.metric .sub{font-size:.83rem;color:var(--muted)}.shopping{width:100%;border-collapse:collapse}.shopping th,.shopping td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}.shopping th{font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}.cost{text-align:right!important;white-space:nowrap}.pill{display:inline-block;padding:3px 8px;border-radius:999px;background:var(--accent2);color:var(--accent);font-size:.78rem;font-weight:700}.pack-row{display:grid;grid-template-columns:1.3fr .8fr .8fr auto;gap:8px;align-items:end;margin-bottom:8px}.pack-row button{height:42px}.muted{color:var(--muted)}.small{font-size:.83rem}.footer{padding:30px 0 50px;color:var(--muted);font-size:.83rem}.hidden{display:none}.error{color:var(--bad);font-weight:650}.success{color:var(--good);font-weight:700}@media(max-width:780px){.grid{grid-template-columns:1fr}.fields{grid-template-columns:1fr}.pack-row{grid-template-columns:1fr 1fr}.pack-row .pack-name{grid-column:1/-1}.pack-row button{width:100%}.wrap{padding:14px}.card{padding:16px}}
-@media print{body{background:#fff}.input-panel,.hero .kicker,.hero p,.footer,.no-print{display:none!important}.grid{display:block}.card{box-shadow:none;border:0;padding:0}.results-card{display:block!important}.wrap{max-width:none}.hero{padding:0}.hero h1{font-size:1.8rem}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);line-height:1.5}.wrap{max-width:1100px;margin:auto;padding:20px}.hero{padding:34px 0 20px}.kicker{font-size:.82rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.08em}.hero h1{font-size:clamp(2rem,5vw,3.6rem);line-height:1.03;margin:.35rem 0 .7rem}.hero p{max-width:760px;color:var(--muted);font-size:1.08rem}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:var(--shadow)}h2{margin:.1rem 0 1rem;font-size:1.25rem}h3{margin:1.2rem 0 .7rem;font-size:1rem}.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}label{font-weight:650;font-size:.92rem}.hint{font-size:.8rem;color:var(--muted)}input,select,button{font:inherit}input,select{width:100%;padding:10px 11px;border:1px solid #bcc6ce;border-radius:10px;background:#fff;color:var(--text)}input:focus,select:focus{outline:3px solid rgba(12,107,88,.15);border-color:var(--accent)}button{border:0;border-radius:11px;padding:11px 14px;font-weight:700;cursor:pointer}.primary{background:var(--accent);color:#fff}.secondary{background:#eef1f3;color:var(--text)}.danger{background:#fbe9e9;color:var(--bad)}.callout{background:var(--warnbg);border:1px solid #f0d58c;border-radius:12px;padding:12px 14px;color:#5e4308;font-size:.9rem}.results{display:grid;gap:12px}.metric{padding:14px;border:1px solid var(--line);border-radius:12px}.metric .label{font-size:.82rem;color:var(--muted)}.metric .value{font-size:1.35rem;font-weight:800;margin-top:2px}.metric .sub{font-size:.83rem;color:var(--muted)}.shopping{width:100%;border-collapse:collapse}.shopping th,.shopping td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}.shopping th{font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}.cost{text-align:right!important;white-space:nowrap}.pack-row{display:grid;grid-template-columns:1.3fr .8fr .8fr auto;gap:8px;align-items:end;margin-bottom:8px}.pack-row button{height:42px}.preset-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.preset{border:1px solid var(--line);border-radius:14px;padding:14px;background:#fff}.preset h3{margin:0 0 6px}.preset p{margin:0 0 10px}.preset button{width:100%}.muted{color:var(--muted)}.small{font-size:.83rem}.footer{padding:30px 0 50px;color:var(--muted);font-size:.83rem}.hidden{display:none}.error{color:var(--bad);font-weight:650}@media(max-width:780px){.grid,.preset-grid{grid-template-columns:1fr}.fields{grid-template-columns:1fr}.pack-row{grid-template-columns:1fr 1fr}.pack-row .pack-name{grid-column:1/-1}.pack-row button{width:100%}.wrap{padding:14px}.card{padding:16px}}@media print{body{background:#fff}.input-panel,.hero .kicker,.hero p,.footer,.no-print,.preset-section{display:none!important}.grid{display:block}.card{box-shadow:none;border:0;padding:0}.wrap{max-width:none}.hero{padding:0}.hero h1{font-size:1.8rem}}
 </style>
 </head>
 <body>
 <main class="wrap">
-<nav style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:8px" aria-label="Tools"><a href="./" style="color:#0c6b58;font-weight:700;text-decoration:none" aria-current="page">Patio materials calculator</a><a href="pack-optimiser.html" style="color:#0c6b58;font-weight:700;text-decoration:none">Pack optimiser</a></nav>
-<section class="hero">
-<div class="kicker">DIY buying planner · UK prototype</div>
-<h1>Patio Materials Calculator & Buying Planner</h1>
-<p>Use this free UK patio materials calculator to turn your patio dimensions into paving, sub-base and mortar quantities, then convert them into real packs, surplus and estimated basket cost. The calculator keeps mathematical outputs separate from adjustable construction assumptions.</p>
-</section>
+<nav style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:8px" aria-label="Tools"><a href="./" style="color:#0c6b58;font-weight:700;text-decoration:none" aria-current="page">Patio materials calculator</a><a href="pack-optimiser.html" style="color:#0c6b58;font-weight:700;text-decoration:none">Pack optimiser</a><a href="flooring-pack-calculator.html" style="color:#0c6b58;font-weight:700;text-decoration:none">Flooring pack calculator</a></nav>
+<section class="hero"><div class="kicker">DIY buying planner · UK prototype</div><h1>Patio Materials Calculator & Buying Planner</h1><p>Turn your patio dimensions into paving, sub-base and mortar quantities, then convert them into real packs, surplus and estimated basket cost.</p></section>
 <div class="grid">
 <section class="card input-panel" aria-labelledby="inputs-title">
 <h2 id="inputs-title">1. Project and assumptions</h2>
@@ -33,129 +28,52 @@
 <div class="field"><label for="length">Patio length (m)</label><input id="length" type="number" min="0.01" step="0.01" value="5"></div>
 <div class="field"><label for="width">Patio width (m)</label><input id="width" type="number" min="0.01" step="0.01" value="4"></div>
 <div class="field"><label for="waste">Paving waste allowance (%)</label><input id="waste" type="number" min="0" max="50" step="0.5" value="10"><span class="hint">Editable. Use the paving manufacturer's/project guidance.</span></div>
-<div class="field"><label for="subDepth">Compacted sub-base depth (mm)</label><input id="subDepth" type="number" min="0" max="500" step="5" value="100"><span class="hint">Default reflects common manufacturer guidance for domestic patios.</span></div>
-<div class="field"><label for="bedDepth">Mortar bed depth (mm)</label><input id="bedDepth" type="number" min="0" max="150" step="5" value="30"><span class="hint">Adjust to your paving system/manufacturer.</span></div>
-<div class="field"><label for="sandRatio">Mortar sand : cement ratio</label><select id="sandRatio"><option value="4" selected>4 : 1</option><option value="3">3 : 1</option></select><span class="hint">Ratio by volume for estimate only.</span></div>
+<div class="field"><label for="subDepth">Compacted sub-base depth (mm)</label><input id="subDepth" type="number" min="0" max="500" step="5" value="100"></div>
+<div class="field"><label for="bedDepth">Mortar bed depth (mm)</label><input id="bedDepth" type="number" min="0" max="150" step="5" value="30"></div>
+<div class="field"><label for="sandRatio">Mortar sand : cement ratio</label><select id="sandRatio"><option value="4" selected>4 : 1</option><option value="3">3 : 1</option></select></div>
 </div>
-<div class="callout" style="margin-top:14px"><strong>Important:</strong> these are planning estimates, not universal construction instructions. Ground conditions, paving type, drainage, manufacturer requirements and local circumstances can change the build-up.</div>
-
-<h3>2. Paving packs</h3>
-<p class="small muted">Add the packs you are actually considering. The planner compares single-pack options and mixed combinations to find the cheapest basket that covers the required paving area.</p>
+<div class="callout" style="margin-top:14px"><strong>Important:</strong> these are planning estimates, not universal construction instructions. Ground conditions, paving type, drainage and manufacturer requirements can change the build-up.</div>
+<h3>2. Paving products</h3>
+<p class="small muted">Enter the actual paving product or pack you are considering. Use the supplier's stated pack coverage and current price. You can also load one of the verified example products further down the page.</p>
 <div id="packRows"></div>
-<button class="secondary no-print" id="addPack" type="button">+ Add paving pack</button>
-
+<button class="secondary no-print" id="addPack" type="button">+ Add paving product</button>
 <h3>3. Other purchasable materials</h3>
-<p class="small muted">For materials where converting volume to bag weight would require an uncertain bulk-density assumption, enter the coverage or yield stated by your supplier/product. Leave blank to show the construction quantity only.</p>
+<p class="small muted">Where a reliable conversion depends on a product's declared coverage or yield, enter the supplier value. Leave blank to show the construction quantity only.</p>
 <div class="fields">
-<div class="field"><label for="subPackCoverage">Sub-base: coverage per package (m²)</label><input id="subPackCoverage" type="number" min="0" step="0.01" placeholder="e.g. supplier coverage"><span class="hint">At the sub-base depth entered above.</span></div>
+<div class="field"><label for="subPackCoverage">Sub-base: coverage per package (m²)</label><input id="subPackCoverage" type="number" min="0" step="0.01" placeholder="e.g. supplier coverage"></div>
 <div class="field"><label for="subPackPrice">Sub-base: package price (£)</label><input id="subPackPrice" type="number" min="0" step="0.01" placeholder="optional"></div>
-<div class="field"><label for="mortarYield">Mortar/premix: yield per package (litres)</label><input id="mortarYield" type="number" min="0" step="0.1" placeholder="optional"><span class="hint">Use the product's declared mixed yield.</span></div>
+<div class="field"><label for="mortarYield">Mortar/premix: yield per package (litres)</label><input id="mortarYield" type="number" min="0" step="0.1" placeholder="optional"></div>
 <div class="field"><label for="mortarPrice">Mortar/premix: package price (£)</label><input id="mortarPrice" type="number" min="0" step="0.01" placeholder="optional"></div>
-<div class="field"><label for="jointCoverage">Jointing: coverage per package (m²)</label><input id="jointCoverage" type="number" min="0" step="0.01" placeholder="optional"><span class="hint">Only use if your jointing product gives area coverage applicable to your joint size.</span></div>
+<div class="field"><label for="jointCoverage">Jointing: coverage per package (m²)</label><input id="jointCoverage" type="number" min="0" step="0.01" placeholder="optional"></div>
 <div class="field"><label for="jointPrice">Jointing: package price (£)</label><input id="jointPrice" type="number" min="0" step="0.01" placeholder="optional"></div>
 </div>
-<button class="primary no-print" id="calculate" type="button" style="margin-top:18px;width:100%">Calculate shopping list</button>
-<div id="formError" class="error" role="alert" style="margin-top:10px"></div>
+<button class="primary no-print" id="calculate" type="button" style="margin-top:18px;width:100%">Calculate shopping list</button><div id="formError" class="error" role="alert" style="margin-top:10px"></div>
 </section>
-
-<section class="card results-card" aria-live="polite">
-<h2>Results</h2>
-<div id="emptyState" class="muted">Enter your project and press <strong>Calculate shopping list</strong>.</div>
-<div id="results" class="results hidden">
-<div class="metric"><div class="label">Patio area</div><div class="value" id="areaOut"></div></div>
-<div class="metric"><div class="label">Paving requirement incl. waste</div><div class="value" id="pavingOut"></div><div class="sub" id="wasteOut"></div></div>
-<div class="metric"><div class="label">Compacted sub-base volume</div><div class="value" id="subOut"></div><div class="sub">Volume only unless you supply product coverage.</div></div>
-<div class="metric"><div class="label">Mortar bed volume</div><div class="value" id="mortarOut"></div><div class="sub" id="mortarSplitOut"></div></div>
-<div id="optBox" class="metric hidden"><div class="label">Cheapest paving combination</div><div class="value" id="optCost"></div><div class="sub" id="optDetails"></div></div>
-<h3>Shopping list</h3>
-<div style="overflow-x:auto"><table class="shopping"><thead><tr><th>Material</th><th>Buy</th><th>Coverage / surplus</th><th class="cost">Cost</th></tr></thead><tbody id="shoppingBody"></tbody><tfoot><tr><th colspan="3">Known basket total</th><th class="cost" id="totalCost"></th></tr></tfoot></table></div>
-<div class="callout"><strong>Before buying:</strong> verify paving installation, drainage/fall, sub-base, bedding, primer and jointing requirements with the paving/product manufacturer. This tool deliberately does not turn uncertain material densities into bag counts.</div>
-<button class="secondary no-print" onclick="window.print()" style="margin-top:12px">Print / save shopping list</button>
+<section class="card results-card" aria-live="polite"><h2>Results</h2><div id="emptyState" class="muted">Enter your project and press <strong>Calculate shopping list</strong>.</div><div id="results" class="results hidden"><div class="metric"><div class="label">Patio area</div><div class="value" id="areaOut"></div></div><div class="metric"><div class="label">Paving requirement incl. waste</div><div class="value" id="pavingOut"></div><div class="sub" id="wasteOut"></div></div><div class="metric"><div class="label">Compacted sub-base volume</div><div class="value" id="subOut"></div></div><div class="metric"><div class="label">Mortar bed volume</div><div class="value" id="mortarOut"></div><div class="sub" id="mortarSplitOut"></div></div><div id="optBox" class="metric hidden"><div class="label">Cheapest paving combination</div><div class="value" id="optCost"></div><div class="sub" id="optDetails"></div></div><h3>Shopping list</h3><div style="overflow-x:auto"><table class="shopping"><thead><tr><th>Material</th><th>Buy</th><th>Coverage / surplus</th><th class="cost">Cost</th></tr></thead><tbody id="shoppingBody"></tbody><tfoot><tr><th colspan="3">Known basket total</th><th class="cost" id="totalCost"></th></tr></tfoot></table></div><div class="callout"><strong>Before buying:</strong> verify installation, drainage/fall, sub-base, bedding, primer and jointing requirements with the paving/product manufacturer.</div><button class="secondary no-print" onclick="window.print()" style="margin-top:12px">Print / save shopping list</button></div></section>
 </div>
-</section>
-</div>
-<section class="card" style="margin-top:18px">
-<h2>How the calculation works</h2>
-<p><strong>Area</strong> = length × width. <strong>Paving target</strong> = area × (1 + waste allowance). <strong>Sub-base volume</strong> = area × compacted depth. <strong>Mortar volume</strong> = area × bed depth. The mortar split is shown by volume using the selected sand:cement ratio.</p>
-<p class="small muted">Paving optimisation searches integer combinations of the entered packs and returns the lowest-cost combination that meets or exceeds the paving target. Ties are resolved in favour of lower surplus, then fewer packs.</p>
-</section>
-<section class="card" style="margin-top:18px">
-<h2>Construction basis and limitations</h2>
-<p class="small">Current UK manufacturer guidance varies by paving system. Marshalls' general patio guide describes a 100 mm compacted sub-base, about 40 mm concrete/mortar layer and a 3:1 sand:cement mix. Bradstone's concrete/natural-stone guidance describes a 100 mm sub-base, around 30 mm mortar bed and a 4:1 sharp-sand:cement mix. Bradstone also advises a fall and manufacturer-specific joint widths/priming. The defaults in this prototype are therefore editable rather than presented as universal rules.</p>
-<p class="small">Sources: <a href="https://www.marshalls.co.uk/gardens-and-driveways/blog/how-to-lay-a-patio" target="_blank" rel="noopener">Marshalls — How to Build and Lay a Patio</a>; <a href="https://www.bradstone.com/homeowner/blog/how-to-lay-concrete-paving" target="_blank" rel="noopener">Bradstone — How to Lay Concrete Paving</a>; <a href="https://www.tarmac.com/products/aggregates/construction-aggregates/mot-type-1/" target="_blank" rel="noopener">Tarmac — MOT Type 1</a>.</p>
-</section>
+<section class="card preset-section" id="paving-presets" style="margin-top:18px"><h2>Choose an existing paving product</h2><p class="muted">Click a product to load its manufacturer-stated pack coverage into the calculator. The nominal slab dimensions are shown for identification; purchase quantity is calculated from the stated pack coverage, which is the more reliable buying figure. Prices are deliberately left blank because they change.</p><div class="preset-grid">
+<div class="preset"><h3>Marshalls Saxon® 450 × 450 × 35 mm</h3><p class="small muted">Concrete paving · pack coverage 12.2 m²</p><button class="secondary preset-button" data-name="Marshalls Saxon 450 × 450 × 35 mm" data-coverage="12.2">Use this product</button></div>
+<div class="preset"><h3>Marshalls Saxon® 600 × 600 × 35 mm</h3><p class="small muted">Concrete paving · pack coverage 10.8 m²</p><button class="secondary preset-button" data-name="Marshalls Saxon 600 × 600 × 35 mm" data-coverage="10.8">Use this product</button></div>
+<div class="preset"><h3>Marshalls Indian Sandstone Project Pack</h3><p class="small muted">Mixed-size natural stone · pack coverage 20.93 m²</p><button class="secondary preset-button" data-name="Marshalls Indian Sandstone Project Pack" data-coverage="20.93">Use this product</button></div>
+</div><p class="small muted" style="margin-bottom:0">Product specifications should still be checked with the manufacturer before ordering.</p></section>
+<section class="card" style="margin-top:18px"><h2>How the calculation works</h2><p><strong>Area</strong> = length × width. <strong>Paving target</strong> = area × (1 + waste allowance). <strong>Sub-base volume</strong> = area × compacted depth. <strong>Mortar volume</strong> = area × bed depth.</p><p class="small muted">Paving optimisation searches integer combinations of the entered products and returns the lowest-cost combination that meets or exceeds the paving target. If a product price is blank, the tool can still calculate the number of packs required for that product.</p></section>
+<section class="card" style="margin-top:18px"><h2>Construction basis and limitations</h2><p class="small">Manufacturer guidance varies by paving system. The defaults are editable rather than presented as universal rules.</p><p class="small">Sources: <a href="https://www.marshalls.co.uk/gardens-and-driveways/products/saxon-paving" target="_blank" rel="noopener">Marshalls — Saxon Paving</a>; <a href="https://www.marshalls.co.uk/gardens-and-driveways/products/indian-sandstone-paving" target="_blank" rel="noopener">Marshalls — Indian Sandstone</a>.</p></section>
 <div class="footer">Prototype MVP · No account · No backend · No paid API · Calculations run in your browser.</div>
 </main>
 <script>
 const $=id=>document.getElementById(id);
-let packs=[
-  {name:'Pack A',coverage:5.4,price:312},
-  {name:'Pack B',coverage:2.4,price:145}
-];
+let packs=[{name:'',coverage:NaN,price:NaN}];
 function esc(s){return String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));}
-function renderPacks(){
-  const box=$('packRows'); box.innerHTML='';
-  packs.forEach((p,i)=>{
-    const row=document.createElement('div');row.className='pack-row';
-    row.innerHTML=`<div class="field pack-name"><label>Pack name</label><input data-k="name" data-i="${i}" value="${esc(p.name)}"></div><div class="field"><label>Coverage (m²)</label><input type="number" min="0" step="0.01" data-k="coverage" data-i="${i}" value="${p.coverage}"></div><div class="field"><label>Price (£)</label><input type="number" min="0" step="0.01" data-k="price" data-i="${i}" value="${p.price}"></div><button class="danger no-print" type="button" data-remove="${i}" aria-label="Remove ${esc(p.name)}">Remove</button>`;
-    box.appendChild(row);
-  });
-  box.querySelectorAll('input').forEach(inp=>inp.addEventListener('input',e=>{const i=+e.target.dataset.i,k=e.target.dataset.k;packs[i][k]=k==='name'?e.target.value:(e.target.value===''?NaN:Number(e.target.value));}));
-  box.querySelectorAll('[data-remove]').forEach(btn=>btn.addEventListener('click',()=>{packs.splice(+btn.dataset.remove,1);renderPacks();}));
-}
-$('addPack').addEventListener('click',()=>{if(packs.length>=6){$('formError').textContent='The MVP compares up to 6 paving pack options at once.';return;} packs.push({name:`Pack ${String.fromCharCode(65+packs.length)}`,coverage:0,price:NaN});renderPacks();});
-function num(id){const v=Number($(id).value);return Number.isFinite(v)?v:0}
-function money(v){return new Intl.NumberFormat('en-GB',{style:'currency',currency:'GBP'}).format(v)}
-function dec(v,d=2){return Number(v).toLocaleString('en-GB',{maximumFractionDigits:d})}
-function optimise(target,items){
-  const valid=items.filter(x=>Number.isFinite(x.coverage)&&x.coverage>0&&Number.isFinite(x.price)&&x.price>=0);
-  if(!valid.length)return null;
-  const minCov=Math.min(...valid.map(x=>x.coverage));
-  const maxPacks=Math.ceil(target/minCov)+3;
-  let best=null;
-  function rec(idx,counts,cov,cost,total){
-    if(cov>=target){const cand={counts:[...counts],cov,cost,total};if(!best||cost<best.cost-1e-9||(Math.abs(cost-best.cost)<1e-9&&(cov-target)<(best.cov-target)-1e-9)||(Math.abs(cost-best.cost)<1e-9&&Math.abs((cov-target)-(best.cov-target))<1e-9&&total<best.total))best=cand;return;}
-    if(idx===valid.length||total>=maxPacks)return;
-    const item=valid[idx];
-    const remaining=maxPacks-total;
-    for(let n=0;n<=remaining;n++){counts[idx]=n;rec(idx+1,counts,cov+n*item.coverage,cost+n*item.price,total+n);}
-    counts[idx]=0;
-  }
-  rec(0,new Array(valid.length).fill(0),0,0,0);
-  return best?{...best,items:valid}:null;
-}
+function renderPacks(){const box=$('packRows');box.innerHTML='';packs.forEach((p,i)=>{const row=document.createElement('div');row.className='pack-row';const cov=Number.isFinite(p.coverage)?p.coverage:'';const price=Number.isFinite(p.price)?p.price:'';row.innerHTML=`<div class="field pack-name"><label>Paving product name</label><input data-k="name" data-i="${i}" value="${esc(p.name)}" placeholder="e.g. supplier + range + slab size"></div><div class="field"><label>Pack coverage (m²)</label><input type="number" min="0" step="0.01" data-k="coverage" data-i="${i}" value="${cov}" placeholder="e.g. 12.2"></div><div class="field"><label>Pack price (£)</label><input type="number" min="0" step="0.01" data-k="price" data-i="${i}" value="${price}" placeholder="optional"></div><button class="danger no-print" type="button" data-remove="${i}">Remove</button>`;box.appendChild(row);});box.querySelectorAll('input').forEach(inp=>inp.addEventListener('input',e=>{const i=+e.target.dataset.i,k=e.target.dataset.k;packs[i][k]=k==='name'?e.target.value:(e.target.value===''?NaN:Number(e.target.value));}));box.querySelectorAll('[data-remove]').forEach(btn=>btn.addEventListener('click',()=>{packs.splice(+btn.dataset.remove,1);if(!packs.length)packs.push({name:'',coverage:NaN,price:NaN});renderPacks();}));}
+$('addPack').addEventListener('click',()=>{if(packs.length>=6){$('formError').textContent='The planner compares up to 6 paving products at once.';return;}packs.push({name:'',coverage:NaN,price:NaN});renderPacks();});
+function num(id){const v=Number($(id).value);return Number.isFinite(v)?v:0}function money(v){return new Intl.NumberFormat('en-GB',{style:'currency',currency:'GBP'}).format(v)}function dec(v,d=2){return Number(v).toLocaleString('en-GB',{maximumFractionDigits:d})}
+function optimise(target,items){const valid=items.filter(x=>x.name.trim()&&Number.isFinite(x.coverage)&&x.coverage>0);if(!valid.length)return null;const priced=valid.filter(x=>Number.isFinite(x.price)&&x.price>=0);if(!priced.length){const item=valid[0],n=Math.ceil(target/item.coverage);return{counts:[n],cov:n*item.coverage,cost:null,total:n,items:[item]};}const minCov=Math.min(...priced.map(x=>x.coverage)),maxPacks=Math.ceil(target/minCov)+3;let best=null;function rec(idx,counts,cov,cost,total){if(cov>=target){const cand={counts:[...counts],cov,cost,total};if(!best||cost<best.cost-1e-9||(Math.abs(cost-best.cost)<1e-9&&(cov-target)<(best.cov-target)-1e-9)||(Math.abs(cost-best.cost)<1e-9&&Math.abs((cov-target)-(best.cov-target))<1e-9&&total<best.total))best=cand;return;}if(idx===priced.length||total>=maxPacks)return;const item=priced[idx],remaining=maxPacks-total;for(let n=0;n<=remaining;n++){counts[idx]=n;rec(idx+1,counts,cov+n*item.coverage,cost+n*item.price,total+n);}counts[idx]=0;}rec(0,new Array(priced.length).fill(0),0,0,0);return best?{...best,items:priced}:null;}
 function addRow(body,mat,buy,coverage,cost,known=true){const tr=document.createElement('tr');tr.innerHTML=`<td><strong>${esc(mat)}</strong></td><td>${buy}</td><td>${coverage}</td><td class="cost">${known?money(cost):'—'}</td>`;body.appendChild(tr);}
-function calculate(){
- $('formError').textContent='';
- const L=num('length'),W=num('width'),waste=num('waste'),subD=num('subDepth'),bedD=num('bedDepth'),ratio=num('sandRatio');
- if(L<=0||W<=0){$('formError').textContent='Enter a length and width greater than zero.';return}
- if(waste<0||subD<0||bedD<0){$('formError').textContent='Waste and depths cannot be negative.';return}
- const area=L*W,target=area*(1+waste/100),subVol=area*(subD/1000),mortarVol=area*(bedD/1000),mortarLitres=mortarVol*1000;
- const sandVol=mortarVol*ratio/(ratio+1),cementVol=mortarVol/(ratio+1);
- $('areaOut').textContent=`${dec(area)} m²`;
- $('pavingOut').textContent=`${dec(target)} m²`;
- $('wasteOut').textContent=`Includes ${dec(target-area)} m² (${dec(waste,1)}%) deliberate allowance.`;
- $('subOut').textContent=`${dec(subVol,3)} m³`;
- $('mortarOut').textContent=`${dec(mortarVol,3)} m³ (${dec(mortarLitres,0)} L)`;
- $('mortarSplitOut').textContent=`At ${ratio}:1 by volume: approx. ${dec(sandVol,3)} m³ sharp sand + ${dec(cementVol,3)} m³ cement within the theoretical mortar volume. Actual dry-material purchasing/yield must follow product data.`;
- const opt=optimise(target,packs);
- let knownTotal=0;const body=$('shoppingBody');body.innerHTML='';
- if(opt){
-   $('optBox').classList.remove('hidden');$('optCost').textContent=money(opt.cost);
-   const parts=opt.counts.map((n,i)=>n?`${esc(opt.items[i].name)} × ${n}`:'').filter(Boolean);
-   $('optDetails').innerHTML=`${parts.join(' + ')} · buys ${dec(opt.cov)} m² · surplus ${dec(opt.cov-target)} m² beyond the target.`;
-   addRow(body,'Paving',parts.join(' + '),`${dec(opt.cov)} m² bought; ${dec(opt.cov-target)} m² above target`,opt.cost);knownTotal+=opt.cost;
- } else {$('optBox').classList.add('hidden');addRow(body,'Paving',`${dec(target)} m² required`,'Add valid pack coverage and price to optimise',0,false)}
- const subCov=num('subPackCoverage'),subPrice=num('subPackPrice');
- if(subCov>0){const n=Math.ceil(area/subCov);addRow(body,'MOT Type 1 / sub-base',`${n} package${n===1?'':'s'}`,`Supplier coverage entered: ${dec(subCov)} m²/package at ${dec(subD,0)} mm`,n*subPrice,subPrice>0);if(subPrice>0)knownTotal+=n*subPrice}else addRow(body,'MOT Type 1 / sub-base',`${dec(subVol,3)} m³ compacted volume`,'Enter supplier package coverage to convert to packs',0,false);
- const mortYield=num('mortarYield'),mortPrice=num('mortarPrice');
- if(mortYield>0){const n=Math.ceil(mortarLitres/mortYield);addRow(body,'Mortar / premix',`${n} package${n===1?'':'s'}`,`${dec(mortYield,1)} L declared yield/package`,n*mortPrice,mortPrice>0);if(mortPrice>0)knownTotal+=n*mortPrice}else addRow(body,'Mortar bed',`${dec(mortarLitres,0)} L theoretical volume`,`${ratio}:1 sand:cement selected; use product yield for purchase conversion`,0,false);
- const jCov=num('jointCoverage'),jPrice=num('jointPrice');
- if(jCov>0){const n=Math.ceil(area/jCov);addRow(body,'Jointing compound',`${n} package${n===1?'':'s'}`,`${dec(jCov)} m² entered coverage/package`,n*jPrice,jPrice>0);if(jPrice>0)knownTotal+=n*jPrice}else addRow(body,'Jointing compound','Product-specific','Coverage varies with joint width, depth, paving format and product',0,false);
- $('totalCost').textContent=knownTotal>0?money(knownTotal):'—';
- $('emptyState').classList.add('hidden');$('results').classList.remove('hidden');
-}
-$('calculate').addEventListener('click',calculate);renderPacks();calculate();
+function calculate(){ $('formError').textContent='';const L=num('length'),W=num('width'),waste=num('waste'),subD=num('subDepth'),bedD=num('bedDepth'),ratio=num('sandRatio');if(L<=0||W<=0){$('formError').textContent='Enter a length and width greater than zero.';return}const area=L*W,target=area*(1+waste/100),subVol=area*(subD/1000),mortarVol=area*(bedD/1000),mortarLitres=mortarVol*1000,sandVol=mortarVol*ratio/(ratio+1),cementVol=mortarVol/(ratio+1);$('areaOut').textContent=`${dec(area)} m²`;$('pavingOut').textContent=`${dec(target)} m²`;$('wasteOut').textContent=`Includes ${dec(target-area)} m² (${dec(waste,1)}%) allowance.`;$('subOut').textContent=`${dec(subVol,3)} m³`;$('mortarOut').textContent=`${dec(mortarVol,3)} m³ (${dec(mortarLitres,0)} L)`;$('mortarSplitOut').textContent=`At ${ratio}:1 by volume: approx. ${dec(sandVol,3)} m³ sharp sand + ${dec(cementVol,3)} m³ cement within the theoretical mortar volume.`;const opt=optimise(target,packs);let knownTotal=0;const body=$('shoppingBody');body.innerHTML='';if(opt){$('optBox').classList.remove('hidden');const parts=opt.counts.map((n,i)=>n?`${esc(opt.items[i].name)} × ${n}`:'').filter(Boolean);$('optCost').textContent=opt.cost===null?`${opt.total} pack${opt.total===1?'':'s'} required`:money(opt.cost);$('optDetails').innerHTML=`${parts.join(' + ')} · buys ${dec(opt.cov)} m² · surplus ${dec(opt.cov-target)} m² beyond the target.`;addRow(body,'Paving',parts.join(' + '),`${dec(opt.cov)} m² bought; ${dec(opt.cov-target)} m² above target`,opt.cost||0,opt.cost!==null);if(opt.cost!==null)knownTotal+=opt.cost;}else{$('optBox').classList.add('hidden');addRow(body,'Paving',`${dec(target)} m² required`,'Enter or choose a paving product to calculate packs',0,false)}const subCov=num('subPackCoverage'),subPrice=num('subPackPrice');if(subCov>0){const n=Math.ceil(area/subCov);addRow(body,'MOT Type 1 / sub-base',`${n} package${n===1?'':'s'}`,`${dec(subCov)} m²/package at ${dec(subD,0)} mm`,n*subPrice,subPrice>0);if(subPrice>0)knownTotal+=n*subPrice}else addRow(body,'MOT Type 1 / sub-base',`${dec(subVol,3)} m³ compacted volume`,'Enter supplier package coverage to convert to packs',0,false);const mortYield=num('mortarYield'),mortPrice=num('mortarPrice');if(mortYield>0){const n=Math.ceil(mortarLitres/mortYield);addRow(body,'Mortar / premix',`${n} package${n===1?'':'s'}`,`${dec(mortYield,1)} L declared yield/package`,n*mortPrice,mortPrice>0);if(mortPrice>0)knownTotal+=n*mortPrice}else addRow(body,'Mortar bed',`${dec(mortarLitres,0)} L theoretical volume`,`${ratio}:1 sand:cement selected; use product yield for purchase conversion`,0,false);const jCov=num('jointCoverage'),jPrice=num('jointPrice');if(jCov>0){const n=Math.ceil(area/jCov);addRow(body,'Jointing compound',`${n} package${n===1?'':'s'}`,`${dec(jCov)} m² entered coverage/package`,n*jPrice,jPrice>0);if(jPrice>0)knownTotal+=n*jPrice}else addRow(body,'Jointing compound','Product-specific','Coverage varies with joint width, depth, paving format and product',0,false);$('totalCost').textContent=knownTotal>0?money(knownTotal):'—';$('emptyState').classList.add('hidden');$('results').classList.remove('hidden');}
+function loadPreset(name,coverage){packs=[{name,coverage:Number(coverage),price:NaN}];renderPacks();calculate();document.querySelector('.input-panel').scrollIntoView({behavior:'smooth',block:'start'});}
+document.querySelectorAll('.preset-button').forEach(btn=>btn.addEventListener('click',()=>loadPreset(btn.dataset.name,btn.dataset.coverage)));
+$('calculate').addEventListener('click',calculate);renderPacks();
 </script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token":"38b26ef7e4254aff90ab66220a718fa1"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
